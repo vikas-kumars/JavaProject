@@ -25,9 +25,10 @@ Thread trd1 = new Thread("My Thread 1"){
             }
         }
     };     
-    public static void main(String a[]){
+    public static void main(String a[]) throws InterruptedException{
         MyDeadlock mdl = new MyDeadlock();
         mdl.trd1.start();
+        mdl.trd1.join();
         mdl.trd2.start();
     }
 }
